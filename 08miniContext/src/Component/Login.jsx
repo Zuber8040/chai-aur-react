@@ -20,9 +20,9 @@ function Login() {
         {"   "}
         <input value={password} onChange={(e)=>setpassword(e.target.value)} type="text" placeholder='password'  />
         <button onClick={handleSubmit}>Submit</button>
-
+        
     </div>
-  )
+  ) 
 }
 
 export default Login
