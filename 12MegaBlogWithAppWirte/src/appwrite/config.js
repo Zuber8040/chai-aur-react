@@ -35,6 +35,8 @@ export class Service{
                     console.log("Appwrite Service :: create Post error ",error);   
                 }
     }
+
+
     async updatePost(slug,{title,content,featuredImg,status}){
         try {
 
@@ -53,6 +55,8 @@ export class Service{
             console.log("Appwrite Service :: Update Post error ",error);   
         }
 }
+
+
 async deletePost(slug,{title,content,featuredImg,status}){
     try {
 
