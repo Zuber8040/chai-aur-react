@@ -10,7 +10,7 @@ export class Service{
     constructor(){
         this.client
             .setEndpoint(conf.appwirteUrl)
-            .setEndpoint(conf.appwirteProjectId);
+            .setProject(conf.appwirteProjectId);
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
 
@@ -28,7 +28,7 @@ export class Service{
                             content,
                             featuredImg,
                             status,
-                            userId
+                            userId,
                         }
                     )
                 } catch (error) {
@@ -39,6 +39,8 @@ export class Service{
 
     async updatePost(slug,{title,content,featuredImg,status}){
         try {
+            console.log("Update Post  ::: ");
+
 
             return await this.databases.updateDocument(
                 conf.appwirteDatabaseId,
@@ -51,6 +53,8 @@ export class Service{
                     status
                 }
             );
+
+        
         } catch (error) {
             console.log("Appwrite Service :: Update Post error ",error);   
         }
